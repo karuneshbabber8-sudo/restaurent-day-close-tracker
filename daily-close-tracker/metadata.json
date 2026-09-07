@@ -1,0 +1,6 @@
+{
+  "name": "Restaurant Daily Day Close",
+  "description": "Mobile-first restaurant daily day close financial reconciliation and formatted PDF report export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

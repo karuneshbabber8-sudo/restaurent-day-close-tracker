@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Global WebKit backdrop-filter support */
+  .backdrop-blur-xl,
+  [class*="backdrop-blur-xl"] {
+    -webkit-backdrop-filter: blur(24px) !important;
+    backdrop-filter: blur(24px) !important;
+  }
+
+  .backdrop-blur-md,
+  [class*="backdrop-blur-md"] {
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  .backdrop-blur-lg,
+  [class*="backdrop-blur-lg"] {
+    -webkit-backdrop-filter: blur(16px) !important;
+    backdrop-filter: blur(16px) !important;
+  }
+
+  .backdrop-blur-2xl,
+  [class*="backdrop-blur-2xl"] {
+    -webkit-backdrop-filter: blur(40px) !important;
+    backdrop-filter: blur(40px) !important;
+  }
+
+  .liquid-glass-card {
+    background: rgba(255, 255, 255, 0.40);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dark .liquid-glass-card,
+  html.dark .liquid-glass-card {
+    background: rgba(18, 22, 34, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  /* Automatic dark mode override for explicit Tailwind glass utility combinations */
+  .dark .backdrop-blur-xl.bg-white\/40,
+  .dark [class*="bg-white/40"],
+  html.dark .backdrop-blur-xl.bg-white\/40,
+  html.dark [class*="bg-white/40"] {
+    background-color: rgba(18, 22, 34, 0.65) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .liquid-glass-card-subtle {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dark .liquid-glass-card-subtle,
+  html.dark .liquid-glass-card-subtle {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .liquid-glass-dropdown {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .dark .liquid-glass-dropdown,
+  html.dark .liquid-glass-dropdown {
+    background: rgba(18, 24, 38, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 24px 60px -8px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .liquid-glass-input {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.02), 0 2px 8px 0 rgba(0, 0, 0, 0.02);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark .liquid-glass-input,
+  html.dark .liquid-glass-input {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .liquid-glass-input:focus-within {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(245, 158, 11, 0.75);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .dark .liquid-glass-input:focus-within,
+  html.dark .liquid-glass-input:focus-within {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(245, 158, 11, 0.85);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .liquid-glass-btn-primary {
+    background: linear-gradient(to right, rgba(249, 115, 22, 0.8), rgba(245, 158, 11, 0.8));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark .liquid-glass-btn-primary,
+  html.dark .liquid-glass-btn-primary {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 24px -2px rgba(234, 88, 12, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .liquid-glass-btn-secondary {
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark .liquid-glass-btn-secondary,
+  html.dark .liquid-glass-btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  /* Specular sheen adjustment for dark mode */
+  .dark [class*="via-white/80"],
+  .dark [class*="via-white/90"],
+  html.dark [class*="via-white/80"],
+  html.dark [class*="via-white/90"] {
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(255, 255, 255, 0.20), var(--tw-gradient-to) !important;
+  }
+}
+
+@keyframes specular-sheen {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+.specular-sheen-hover:hover .sheen-element {
+  animation: specular-sheen 1.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Hide interactive controls when printing */
+  #hero-section,
+  #section-quick-actions,
+  #btn-header-date-pill,
+  #btn-google-account-menu,
+  #btn-google-signin,
+  #btn-load-test-case,
+  #btn-clear-form,
+  button {
+    display: none !important;
+  }
+
+  /* Flatten glass backgrounds for clean high-contrast printing */
+  .liquid-glass-card,
+  .liquid-glass-card-subtle,
+  .liquid-glass-dropdown,
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl,
+  .backdrop-blur-md {
+    backdrop-filter: none !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+}
+
